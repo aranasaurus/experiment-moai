@@ -17,6 +17,7 @@ function ResourceManager:loaded( name )
 end
 
 function ResourceManager:load( name )
+  print( "Loading " .. name .. "..." )
   local resourceDef = ResourceDefinitions:get( name )
   if not resourceDef then
     print( "ERROR: Missing resource definition for " .. name )
@@ -36,6 +37,7 @@ function ResourceManager:load( name )
   end
 
   cache[name] = resource
+  print( "Loaded " .. name )
 end
 
 function ResourceManager:unload( name )
@@ -66,7 +68,8 @@ end
 
 function ResourceManager:loadTiledImage( definition )
   local tiledImage = MOAITileDeck2D.new()
-  local filePath = ASSETS_PATH .. difinition.fileName
+  local filePath = ASSETS_PATH .. definition.fileName
+  print( "Loading tiled image from: " .. filePath )
 
   tiledImage:setTexture( filePath )
   tiledImage:setSize( unpack( definition.tileMapSize ) )
