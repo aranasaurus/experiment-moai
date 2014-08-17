@@ -8,6 +8,13 @@ SCREEN_RESOLUTION = {
   y = 2 * WORLD_RESOLUTION.y
 }
 
+RESOURCE_TYPE = {
+  image = 1,
+  tiled_image = 2,
+  font = 3,
+  sound = 4
+}
+
 -- Window set up
 MOAISim.openWindow( "Concentration", SCREEN_RESOLUTION.x, SCREEN_RESOLUTION.y )
 
