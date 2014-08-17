@@ -46,3 +46,4 @@ layer:insertProp( imageProp )
 
 renderTable = { layer }
 MOAIRenderMgr.setRenderTable( renderTable )
+

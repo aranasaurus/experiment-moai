@@ -38,6 +38,10 @@ function ResourceManager:load( name )
   cache[name] = resource
 end
 
+function ResourceManager:unload( name )
+  cache[name] = nil
+end
+
 function ResourceManager:loadImage( definition )
   local coords = definition.coords
 
