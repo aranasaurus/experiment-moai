@@ -1,3 +1,6 @@
+require 'resource_manager'
+require 'resource_definitions'
+
 WORLD_RESOLUTION = {
   x = 320,
   y = 480
@@ -23,14 +26,19 @@ viewport = MOAIViewport.new()
 viewport:setSize( SCREEN_RESOLUTION.x, SCREEN_RESOLUTION.y )
 viewport:setScale( WORLD_RESOLUTION.x, WORLD_RESOLUTION.y )
 
-layer = MOAILayer2D.new()
+local layer = MOAILayer2D.new()
 layer:setViewport( viewport )
 
-imageGfx = MOAIGfxQuad2D.new()
-imageGfx:setTexture( 'assets/tile_back.png' )
-imageGfx:setRect( -31, -31, 31, 31 )
+ResourceDefinitions:set( "image", {
+  type = RESOURCE_TYPE.image,
+  fileName = 'tile_back.png',
+  width = 62,
+  height = 62
+} )
+ResourceManager:load( "image" )
+local imageGfx = ResourceManager:get( "image" )
 
-imageProp = MOAIProp2D.new()
+local imageProp = MOAIProp2D.new()
 imageProp:setDeck( imageGfx )
 imageProp:setLoc( 0, 0 )
 

@@ -21,7 +21,7 @@ function ResourceManager:load( name )
   if not resourceDef then
     print( "ERROR: Missing resource definition for " .. name )
     cache[name] = nil
-    return
+    return nil
   end
 
   local resource
@@ -39,7 +39,7 @@ function ResourceManager:load( name )
 end
 
 function ResourceManager:loadImage( definition )
-  local coords = difinition.coords
+  local coords = definition.coords
 
   if not coords then
     local halfWidth = definition.width / 2
