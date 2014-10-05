@@ -1,4 +1,4 @@
 experiment-moai
 ===============
 
-Stash spot for me to track my progress through "Developing Mobile Games with MoaiSDK"
+Stash spot for me to explore making games with Moai
